@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody2D playerRb;
-    Vector2 moveVel;
+    Vector2 moveDir;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Input
-        moveVel.x = Input.GetAxisRaw("Horizontal");
-        moveVel.y = Input.GetAxisRaw("Vertical");
+        moveDir.x = Input.GetAxisRaw("Horizontal");
+        moveDir.y = Input.GetAxisRaw("Vertical");
         Shoot();
         Dodge();
     }
@@ -43,6 +43,6 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        playerRb.MovePosition(playerRb.position + moveVel.normalized * moveSpeed * Time.deltaTime);
+        playerRb.MovePosition(playerRb.position + moveDir.normalized * moveSpeed * Time.deltaTime);
     }
 }
