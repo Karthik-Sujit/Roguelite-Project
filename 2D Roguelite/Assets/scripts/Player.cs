@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
         moveVel.x = Input.GetAxisRaw("Horizontal");
         moveVel.y = Input.GetAxisRaw("Vertical");
         Shoot();
+        Dodge();
     }
 
     void Shoot()
@@ -31,8 +33,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Dodge()
+    {
+        if (Input.GetAxisRaw("Dodge") > 0)
+        {
+            print("WHOA! That was close!");
+        }
+    }
+
     void FixedUpdate()
     {
-        playerRb.MovePosition(playerRb.position + moveVel * moveSpeed * Time.deltaTime);
+        playerRb.MovePosition(playerRb.position + moveVel.normalized * moveSpeed * Time.deltaTime);
     }
 }
