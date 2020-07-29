@@ -131,9 +131,9 @@ GameObject:
   m_Component:
   - component: {fileID: 339442522}
   - component: {fileID: 339442521}
-  - component: {fileID: 339442520}
   - component: {fileID: 339442519}
   - component: {fileID: 339442518}
+  - component: {fileID: 339442520}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -187,11 +187,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 339442517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f11a3f10d2d1748ada517b3bf1fa73, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c3ef3ac74966a743908ced3a6da3b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  dodgeForce: 15
+  dodgeForce: 20
   playerRb: {fileID: 339442519}
   playerCollider: {fileID: 339442518}
 --- !u!212 &339442521
