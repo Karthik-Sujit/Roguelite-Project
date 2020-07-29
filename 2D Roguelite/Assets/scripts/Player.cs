@@ -6,7 +6,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
+    public float dodgeForce;
     public Rigidbody2D playerRb;
+    public CircleCollider2D playerCollider;
     Vector2 moveDir;
 
     // Start is called before the first frame update
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetAxisRaw("Dodge") > 0)
         {
+            playerRb.AddForce(moveDir*dodgeForce, ForceMode2D.Impulse);
             print("WHOA! That was close!");
         }
     }
